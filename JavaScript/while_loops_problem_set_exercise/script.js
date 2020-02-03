@@ -1,88 +1,77 @@
-// 1. Print all numbers between -10 and 19
-console.log("Print all numbers between -10 and 19");
-let x = -10;
-
-while (x <= 19) {
-  console.log(x);
-  x++;
-}
-
-// 1. Print all numbers between -10 and 19 FOR LOOP:
-console.log("Print all numbers between -10 and 19 FOR LOOP");
-for(let i = -10; i < 20; i++) {
-  console.log(i);
-}
-
-// 2. Print all even numbers between 10 and 40
-console.log("Print all even numbers between 10 and 40");
-let evenNumbers = 10;
-
-while (evenNumbers <= 40) {
-  console.log(evenNumbers);
-  evenNumbers += 2;
-}
-
-// Print all even numbers between 10 and 40 FOR LOOP:
-console.log("Print all even numbers between 10 and 40 FOR LOOP");
-for(let i = 10; i < 41; i += 2) {
-  console.log(i);
-}
-
-// 2. Print all even numbers between 10 and 40 (with module)
-console.log("Print all even numbers between 10 and 40 with module");
-let evenNumbersMod = 10;
-
-while (evenNumbersMod <= 40) {
-  if (evenNumbersMod % 2 === 0) {
-    console.log(evenNumbersMod);
+// 1. Write a function isEven() which takes a single numeric argument
+//  and returns true if the number is even, and false otherwise
+console.log("FUNCTION EVEN NUMBER:");
+function isEven(num) {
+  let rez = false;
+  if (num % 2 === 0) {
+    rez = true;
   }
-  evenNumbersMod++;
+  return rez;
 }
 
-// Print all even numbers between 10 and 40 (with module) FOR LOOP:
-console.log("Print all even numbers between 10 and 40 (with module) FOR LOOP");
-for(let i = 10; i < 41; i++) {
-  if(i % 2 === 0) {
-    console.log(i);
+console.log(isEven(22));
+
+//  VERSION 2:
+console.log("FUNCTION EVEN NUMBER VERSION 2:");
+function isEven2(num) {
+  return num % 2 === 0;
+}
+console.log(isEven2(5));
+
+// 2. Write a function factorial() which takes a single numeric argument
+// and returns the factorial of that number
+console.log("FUNCTION FACTORIAL:");
+function factorial(num) {
+  let rez = 1;
+  while (num > 1) {
+    rez = rez * num;
+    num--;
   }
+  return rez;
 }
+console.log(factorial(5));
+console.log(factorial(2));
+console.log(factorial(10));
+console.log(factorial(0));
 
-// 3. Print all odd numbers between 300 and 333
-console.log("Print all odd numbers between 300 and 333");
-let oddNum = 300;
-
-while (oddNum <= 333) {
-  if (oddNum % 2 === 1) {
-    console.log(oddNum);
+//  3. Write a function kebabToSnake() which takes a single kebab-cased
+// string argument and returns the snake_cased version
+console.log("FUNCTION KEBAB TO SNAKE:");
+function kebabToSnake(str) {
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] == "-") {
+      newStr += str[i].replace("-", "_");
+    } else {
+      newStr += str[i];
+    }
   }
-  oddNum++;
+  return newStr;
 }
 
-// 3. Print all odd numbers between 300 and 333 FOR LOOP:
-console.log("Print all odd numbers between 300 and 333 FOR LOOP:");
-for(let i = 300; i < 334; i++) {
-  if(i % 2 === 1) {
-    console.log(i);
-  }
+console.log(kebabToSnake("dogs-are-awesome-trully"));
+console.log(kebabToSnake("hello-world"));
+console.log(kebabToSnake("dogs-are-awesome"));
+console.log(kebabToSnake("blah"));
+
+// VERSION 2:
+console.log("VERSION 2:");
+function kebabToSnake2(string) {
+  let newString = string.split("-").join("_");
+  return newString;
 }
 
+console.log(kebabToSnake2("hello-world"));
+console.log(kebabToSnake2("dogs-are-awesome"));
+console.log(kebabToSnake2("dogs-are-awesome-trully"));
 
-// 4. print all numbers divisible by 5 AND 3 between 5 and 50
-console.log("print all numbers divisible by 5 AND 3 between 5 and 50");
-let divisibleNum = 5;
-
-while (divisibleNum <= 50) {
-  if (divisibleNum % 5 === 0 && divisibleNum % 3 === 0) {
-    console.log(divisibleNum);
-  }
-  divisibleNum++;
+// VERSION 3:
+console.log("VERSION 3:");
+function kebabToSnake3(string) {
+  let newString = string.replace(/-/g, "_");
+  return newString;
 }
 
-// 4. print all numbers divisible by 5 AND 3 between 5 and 50 FOR LOOP:
-console.log("Print all numbers divisible by 5 AND 3 between 5 and 50 FOR LOOP");
-
-for(let i = 5; i < 51; i++) {
-  if(i % 5 === 0 && i % 3 === 0) {
-    console.log(i);
-  }
-}
+console.log(kebabToSnake3("hello-world"));
+console.log(kebabToSnake3("dogs-are-awesome"));
+console.log(kebabToSnake3("dogs-are-awesome-trully"));
